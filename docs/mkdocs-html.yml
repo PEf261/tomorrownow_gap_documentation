@@ -92,8 +92,6 @@ plugins:
         developer/api/guide/measurements/attributes-reference/salient-gemv2.md: developer/api/guide/measurements/product-changes.md
         developer/api/guide/measurements/attributes-reference/salient-seasonal-forecast.md: developer/api/guide/measurements/product-changes.md
         developer/api/guide/measurements/attributes-reference/cbam-reanalysis-hourly.md: developer/api/guide/measurements/product-changes.md
-        developer/api/guide/measurements/attributes-reference/cbam-reanalysis-raw.md: developer/api/guide/measurements/product-changes.md
-        developer/api/guide/measurements/attributes-reference/cbam-reanalysis-bias-corrected.md: developer/api/guide/measurements/product-changes.md
       #see https://github.com/mkdocs/mkdocs-redirects/tree/master#using
       #'old.md': 'new.md'
       #'old/file.md': 'new/file.md'

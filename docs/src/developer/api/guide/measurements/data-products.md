@@ -1,6 +1,6 @@
 # Data products
 
-Use the exact `product` identifier in API requests. The catalogue below covers **17 public product identifiers**, reviewed on 8 October 2026. It includes the daily rainfall catalogue cleanup planned for the next API release. The live [options endpoint](https://gap.tomorrownow.org/api/v1/measurement/options/) and [interactive API](https://gap.tomorrownow.org/api/v1/docs/) show what the running service currently exposes; access also depends on your account permissions.
+Use the exact `product` identifier in API requests. The catalogue below covers **20 public product identifiers: 17 current and 3 legacy**, reviewed on 8 October 2026. Products and fields match what the public API serves today; fields scheduled for removal are marked on their pages. The live [options endpoint](https://gap.tomorrownow.org/api/v1/measurement/options/) and [interactive API](https://gap.tomorrownow.org/api/v1/docs/) show what the running service currently exposes; access also depends on your account permissions.
 
 ## Forecasts
 
@@ -25,6 +25,16 @@ Use the exact `product` identifier in API requests. The catalogue below covers *
 | TAMSAT rainfall long-term normals | `tamsat_ltn` | [Fields](attributes-reference/tamsat-ltn.md) |
 | iSDA Soil | `isda_soil` | [Fields](attributes-reference/isda-soil.md) |
 | SoilGrids v2 | `soilgrids_v2` | [Fields](attributes-reference/soilgrids.md) |
+
+## Legacy products
+
+These are still served by the public API, but are not recommended for new integrations.
+
+| Product | API identifiers | Status | Attribute reference |
+|---|---|---|---|
+| Google GenCast — Nigeria | `google_gencast_2_nigeria` | Retirement planned; use `nigeria_nextgen_daily_forecast` | [Fields](attributes-reference/google-gencast-nigeria.md) |
+| CBAM daily reanalysis — raw | `cbam_historical_analysis` | Legacy, still served; for historical rainfall use `imerg_v07` | [Fields](attributes-reference/cbam-reanalysis-raw.md) |
+| CBAM daily reanalysis — bias-corrected | `cbam_historical_analysis_bias_adjust` | Legacy, still served; for historical rainfall use `imerg_v07` | [Fields](attributes-reference/cbam-reanalysis-bias-corrected.md) |
 
 ## Coverage and product choice
 

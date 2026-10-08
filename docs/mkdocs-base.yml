@@ -81,6 +81,9 @@ nav:
                     - TAMSAT rainfall long-term normals: developer/api/guide/measurements/attributes-reference/tamsat-ltn.md
                     - iSDA Soil: developer/api/guide/measurements/attributes-reference/isda-soil.md
                     - SoilGrids v2: developer/api/guide/measurements/attributes-reference/soilgrids.md
+                    - "Legacy: Google GenCast — Nigeria": developer/api/guide/measurements/attributes-reference/google-gencast-nigeria.md
+                    - "Legacy: CBAM daily reanalysis — raw": developer/api/guide/measurements/attributes-reference/cbam-reanalysis-raw.md
+                    - "Legacy: CBAM daily reanalysis — bias-corrected": developer/api/guide/measurements/attributes-reference/cbam-reanalysis-bias-corrected.md
                 - Getting Started: developer/api/guide/measurements/getting-started.md
                 - Advanced Usage: developer/api/guide/measurements/advanced-usage.md
             - Access API Using R: developer/api/guide/access-api-using-r.md

@@ -16,3 +16,9 @@ Choose a product in the [data catalogue](data-products.md) to see its supported 
 - [TAMSAT rainfall long-term normals](attributes-reference/tamsat-ltn.md)
 - [iSDA Soil](attributes-reference/isda-soil.md)
 - [SoilGrids v2](attributes-reference/soilgrids.md)
+
+Legacy products (still served, not recommended for new work):
+
+- [Google GenCast — Nigeria](attributes-reference/google-gencast-nigeria.md)
+- [CBAM daily reanalysis — raw](attributes-reference/cbam-reanalysis-raw.md)
+- [CBAM daily reanalysis — bias-corrected](attributes-reference/cbam-reanalysis-bias-corrected.md)

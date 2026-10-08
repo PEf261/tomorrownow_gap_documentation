@@ -130,7 +130,13 @@
         "blend_scenario",
         "blend_confidence",
         "precipitation",
-        "primary"
+        "primary",
+        "blend_model_scenario",
+        "blend_n_models",
+        "blend_w_occ_gc",
+        "blend_w_amt_gc",
+        "blend_w_amt_heavy_gc",
+        "blend_w_heavy_gc"
       ]
     },
     "kenya_rainfall_daily": {
@@ -287,6 +293,43 @@
         "slope",
         "phosphorus_0_20",
         "potassium_0_20"
+      ]
+    },
+    "google_gencast_2_nigeria": {
+      "page": "google-gencast-nigeria.md",
+      "attributes": [
+        "total_precipitation_6hr",
+        "10m_u_component_of_wind",
+        "10m_v_component_of_wind",
+        "2m_temperature"
+      ]
+    },
+    "cbam_historical_analysis": {
+      "page": "cbam-reanalysis-raw.md",
+      "attributes": [
+        "total_evapotranspiration_flux",
+        "max_temperature",
+        "max_night_temperature",
+        "average_solar_irradiance",
+        "total_solar_irradiance",
+        "min_night_temperature",
+        "max_day_temperature",
+        "total_rainfall",
+        "min_day_temperature",
+        "min_temperature",
+        "average_vapor_pressure",
+        "wind_speed_avg",
+        "min_relative_humidity",
+        "max_relative_humidity"
+      ]
+    },
+    "cbam_historical_analysis_bias_adjust": {
+      "page": "cbam-reanalysis-bias-corrected.md",
+      "attributes": [
+        "max_temperature",
+        "min_temperature",
+        "total_solar_irradiance",
+        "total_rainfall"
       ]
     }
   }

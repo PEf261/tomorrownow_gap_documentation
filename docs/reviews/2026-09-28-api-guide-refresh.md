@@ -35,16 +35,18 @@ No authenticated production data request was made. R is not installed locally, s
 
 The current catalogue labels six-hour precipitation as `mm/day` for WeatherNext 2/NeuralGCM. The guide records that mismatch and asks users to confirm intervals before aggregation; it does not silently rewrite backend units. The known blend missing-member/missing-timestep defects remain separate work.
 
-## Update, 8 October 2026
+## Update, 8 October 2026: guide matches the live public API
 
-- **CBAM removed from the public guide.** The two remaining CBAM daily reanalysis pages (`cbam_historical_analysis`, `cbam_historical_analysis_bias_adjust`) are no longer listed. The API still serves them for existing integrations, so `product-changes.md` names them, and both old pages redirect there. `scripts/check_api_guide.py` skips them through `NOT_LISTED`, and they are removed from the catalogue manifest.
-- **KMSA named.** `kenya_rainfall_daily` is now listed as the *KMSA Kenya daily rainfall forecast* (Kenya Meteorological Service Authority), directly after NextGen. Its page states:
-  - the grid (0.05°, about 5.5 km) and horizon (lead days 0–41);
-  - that it is rainfall-only;
-  - that missing values mean "unavailable", not zero;
-  - that a run can arrive up to two days after its run date.
+Goal (operator, 8 Oct): the guide lists exactly what the public API serves today. Planned removals are marked, not pre-applied.
 
-  These facts come from the operational GAP MCP product registry (`config/products.yaml`, `ke_national_rainfall_daily`).
-- **Examples switched from CBAM temperature to IMERG V07 rainfall** (`imerg_v07`, `precipitation`, 1–3 Sep 2026) in the Python, Jupyter, R, curl and Postman examples. The Postman ZIP is rebuilt from its JSON.
-- **Validation:** the MkDocs build passes. `scripts/check_api_guide.py` against kartoza/tomorrownow_gap PR #1718 fixtures (`3e81a69`) reports **PASS: 17 products, 201 fields, 87 local links, Python snippets, notebook and Postman queries**. Against `main` (`5d59538`), the product list passes; only the blend field count differs, because #1718 is still open.
-- **Not run live:** the new IMERG examples could not be executed. `gap.tomorrownow.org` returns HTTP 410 to the reviewing network, while it serves normally from elsewhere. Run them once against the live API before merging.
+- **20 public products: 17 current and 3 legacy.** The legacy products are still served and sit under their own *Legacy products* heading:
+  - `google_gencast_2_nigeria`: retirement planned in tomorrownow_gap#1717; use `nigeria_nextgen_daily_forecast`.
+  - `cbam_historical_analysis` and `cbam_historical_analysis_bias_adjust`: legacy and still served; use `imerg_v07` for historical rainfall.
+- **Daily precipitation layer:** 24 weather fields plus 6 diagnostic fields marked *being removed* (tomorrownow_gap#1718).
+- **KMSA named.** `kenya_rainfall_daily` is the *KMSA Kenya daily rainfall forecast* (Kenya Meteorological Service Authority), listed after NextGen. Its grid (0.05°), horizon (days 0–41), rainfall-only scope and missing-value guidance come from the GAP MCP product registry.
+- **Examples** use `imerg_v07` precipitation (1–3 Sep 2026) in place of CBAM temperature. The Postman ZIP is rebuilt.
+- **Validation:** the MkDocs build passes. `scripts/check_api_guide.py` against tomorrownow_gap `main` (`5d59538`, 7 Oct) reports **PASS: 20 products, 229 fields, 104 local links, Python snippets, notebook and Postman queries**.
+- **Open items:**
+  - The fixtures are the code defaults; production admin settings could differ. Confirm against `/api/v1/measurement/options/` before merging.
+  - The IMERG examples were not run live, because the reviewing network gets HTTP 410 from `gap.tomorrownow.org`.
+  - When #1717 and #1718 deploy, remove the GenCast Nigeria entry and the six diagnostic rows.

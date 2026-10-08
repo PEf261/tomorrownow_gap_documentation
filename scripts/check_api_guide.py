@@ -18,12 +18,12 @@ GUIDE = ROOT / 'docs/src/developer/api/guide'
 SITE = ROOT / 'docs/site'
 FIXTURES = Path(sys.argv[1]) / 'django_project/gap/fixtures'
 RETIRED = {
-    'google_gencast', 'google_gencast_2_nigeria',
+    'google_gencast',
     'cbam_shortterm_forecast', 'cbam_shortterm_hourly_forecast',
     'nigeria_daily_forecast', 'nigeria_hourly_forecast',
 }
-# Still served for existing integrations, deliberately not listed in the public guide.
-NOT_LISTED = {'cbam_historical_analysis', 'cbam_historical_analysis_bias_adjust'}
+# Still served for existing integrations; listed under legacy products.
+NOT_LISTED = set()
 
 
 def fixture(name):
@@ -53,7 +53,6 @@ for pk, dataset in datasets.items():
             names.add(attribute['variable_name'])
 manifest = json.loads((ROOT / 'docs/reviews/2026-09-28-api-catalogue.json').read_text())['products']
 check(set(manifest) == set(expected), 'Product list differs from API fixtures')
-check(len(expected['precipitation_blend_forecast']) == 24, 'Blend count')
 for product, fields in expected.items():
     record = manifest[product]
     check(set(record['attributes']) == fields, f'Manifest fields: {product}')

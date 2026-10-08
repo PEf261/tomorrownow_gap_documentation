@@ -1,6 +1,6 @@
 # Daily precipitation forecast
 
-Daily WeatherNext 2 ensemble rainfall statistics with a nominal 14-day horizon. The existing API identifier remains stable. The cleaned layer has exactly 24 active weather fields.
+Daily WeatherNext 2 ensemble rainfall statistics with a nominal 14-day horizon. The existing API identifier remains stable. The layer serves 24 weather fields, plus 6 diagnostic fields marked *being removed* below; those are scheduled for removal in kartoza/tomorrownow_gap#1718. Do not build new integrations on them.
 
 ## `precipitation_blend_forecast`
 
@@ -34,6 +34,12 @@ Catalogue grid resolution: 27.8km. Check response coordinates for the actual gri
 | `blend_confidence` | Occurrence-probability decisiveness: 0=low, 1=medium, 2=high. 0 also denotes unavailable data (blend_scenario=0). This is not a forecast skill score. | code | No |
 | `precipitation` | Precipitation | mm | No |
 | `primary` | Daily Q75 when the rainfall event flag is 1, zero for a valid non-event, and unavailable when fewer than 10 complete member-days are counted. | mm | No |
+| `blend_model_scenario` | Active model scenario used in the blend (being removed) | code | No |
+| `blend_n_models` | Number of models contributing to the blend (being removed) | code | No |
+| `blend_w_occ_gc` | GenCast model weight for precipitation occurrence (being removed) | mm/mm | No |
+| `blend_w_amt_gc` | GenCast model weight for precipitation amount (being removed) | mm/mm | No |
+| `blend_w_amt_heavy_gc` | GenCast model weight for heavy precipitation amount (being removed) | mm/mm | No |
+| `blend_w_heavy_gc` | GenCast model weight for heavy precipitation probability (being removed) | mm/mm | No |
 
 ## Choosing a rainfall field
 
