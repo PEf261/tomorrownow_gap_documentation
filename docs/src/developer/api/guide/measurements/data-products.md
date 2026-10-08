@@ -1,6 +1,6 @@
 # Data products
 
-Use the exact `product` identifier in API requests. The catalogue below covers **19 retained public product identifiers**, reviewed on 28 September 2026. It includes the daily rainfall catalogue cleanup planned for the next API release. The live [options endpoint](https://gap.tomorrownow.org/api/v1/measurement/options/) and [interactive API](https://gap.tomorrownow.org/api/v1/docs/) show what the running service currently exposes; access also depends on your account permissions.
+Use the exact `product` identifier in API requests. The catalogue below covers **17 public product identifiers**, reviewed on 8 October 2026. It includes the daily rainfall catalogue cleanup planned for the next API release. The live [options endpoint](https://gap.tomorrownow.org/api/v1/measurement/options/) and [interactive API](https://gap.tomorrownow.org/api/v1/docs/) show what the running service currently exposes; access also depends on your account permissions.
 
 ## Forecasts
 
@@ -8,9 +8,9 @@ Use the exact `product` identifier in API requests. The catalogue below covers *
 |---|---|---|
 | NextGen daily forecasts | `nextgen_forecast`, `nigeria_nextgen_daily_forecast` | [Fields](attributes-reference/nextgen-daily.md) |
 | NextGen hourly forecasts | `nextgen_hourly_forecast`, `nigeria_nextgen_hourly_forecast` | [Fields](attributes-reference/nextgen-hourly.md) |
+| KMSA Kenya daily rainfall forecast | `kenya_rainfall_daily` | [Fields](attributes-reference/kenya-rainfall.md) |
 | Google WeatherNext 2 | `google_weathernext2` | [Fields](attributes-reference/weathernext2.md) |
 | Daily precipitation forecast | `precipitation_blend_forecast` | [Fields](attributes-reference/precipitation-blend.md) |
-| Kenya rainfall forecast | `kenya_rainfall_daily` | [Fields](attributes-reference/kenya-rainfall.md) |
 | NeuralGCM S2S | `neuralgcm_s2s`, `neuralgcm_s2s_realtime` | [Fields](attributes-reference/neuralgcm.md) |
 
 ## Observations, historical data and soil
@@ -22,8 +22,6 @@ Use the exact `product` identifier in API requests. The catalogue below covers *
 | TAHMO weather stations | `tahmo_ground_observation` | [Fields](attributes-reference/tahmo-stations.md) |
 | Disdrometer observations | `disdrometer_ground_observation` | [Fields](attributes-reference/disdrometer.md) |
 | Windborne radiosonde observations | `windborne_radiosonde_observation` | [Fields](attributes-reference/radiosonde.md) |
-| CBAM daily reanalysis — raw | `cbam_historical_analysis` | [Fields](attributes-reference/cbam-reanalysis-raw.md) |
-| CBAM daily reanalysis — bias-corrected | `cbam_historical_analysis_bias_adjust` | [Fields](attributes-reference/cbam-reanalysis-bias-corrected.md) |
 | TAMSAT rainfall long-term normals | `tamsat_ltn` | [Fields](attributes-reference/tamsat-ltn.md) |
 | iSDA Soil | `isda_soil` | [Fields](attributes-reference/isda-soil.md) |
 | SoilGrids v2 | `soilgrids_v2` | [Fields](attributes-reference/soilgrids.md) |
@@ -34,4 +32,4 @@ A forecast horizon or year range is a catalogue label, not a guarantee that ever
 
 NextGen, Nigeria NextGen and WeatherNext 2 are retained. FOCUS/1F models are not retired by this catalogue cleanup; they are not listed as separate public `/measurement/` identifiers in the reviewed catalogue. Use the access route supplied for your account rather than inventing a product identifier.
 
-For old integrations, read [product changes](product-changes.md). Historical CBAM daily reanalysis remains supported. The timetable and forecast archive guidance is under [forecast availability](ingestor-schedule.md).
+For old integrations, read [product changes](product-changes.md). The timetable and forecast archive guidance is under [forecast availability](ingestor-schedule.md).

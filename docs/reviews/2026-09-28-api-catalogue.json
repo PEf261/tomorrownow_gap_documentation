@@ -225,34 +225,6 @@
         "wind_speed_v"
       ]
     },
-    "cbam_historical_analysis": {
-      "page": "cbam-reanalysis-raw.md",
-      "attributes": [
-        "total_evapotranspiration_flux",
-        "max_temperature",
-        "max_night_temperature",
-        "average_solar_irradiance",
-        "total_solar_irradiance",
-        "min_night_temperature",
-        "max_day_temperature",
-        "total_rainfall",
-        "min_day_temperature",
-        "min_temperature",
-        "average_vapor_pressure",
-        "wind_speed_avg",
-        "min_relative_humidity",
-        "max_relative_humidity"
-      ]
-    },
-    "cbam_historical_analysis_bias_adjust": {
-      "page": "cbam-reanalysis-bias-corrected.md",
-      "attributes": [
-        "max_temperature",
-        "min_temperature",
-        "total_solar_irradiance",
-        "total_rainfall"
-      ]
-    },
     "tamsat_ltn": {
       "page": "tamsat-ltn.md",
       "attributes": [

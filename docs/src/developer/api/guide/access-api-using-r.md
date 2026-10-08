@@ -1,6 +1,6 @@
 # R
 
-Use `httr` to request a NetCDF file and `ncdf4` to inspect it. The example uses retained historical daily CBAM data.
+Use `httr` to request a NetCDF file and `ncdf4` to inspect it. The example uses IMERG V07 daily satellite rainfall.
 
 ## Install and authenticate
 
@@ -18,14 +18,14 @@ The request uses:
 
 ```r
 params <- list(
-  product = "cbam_historical_analysis",
-  attributes = "max_temperature,min_temperature",
-  start_date = "2020-01-01", end_date = "2020-01-03",
+  product = "imerg_v07",
+  attributes = "precipitation",
+  start_date = "2026-09-01", end_date = "2026-09-03",
   output_type = "netcdf", bbox = "36.7,-1.4,36.9,-1.2"
 )
 ```
 
-The script checks HTTP status, validates the NetCDF file, prints the variables and temperature range, and saves `data.nc`. It closes the NetCDF handle and removes the temporary file even if processing fails.
+The script checks HTTP status, validates the NetCDF file, prints the variables and rainfall range, and saves `data.nc`. It closes the NetCDF handle and removes the temporary file even if processing fails.
 
 ## Multiple points
 

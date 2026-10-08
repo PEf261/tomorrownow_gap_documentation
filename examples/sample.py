@@ -7,10 +7,10 @@ import requests
 
 API_URL = "https://gap.tomorrownow.org/api/v1/measurement/"
 PARAMS = {
-    "product": "cbam_historical_analysis",
-    "attributes": "max_temperature,min_temperature",
-    "start_date": "2020-01-01",
-    "end_date": "2020-01-03",
+    "product": "imerg_v07",
+    "attributes": "precipitation",
+    "start_date": "2026-09-01",
+    "end_date": "2026-09-03",
     "output_type": "netcdf",
     "bbox": "36.7,-1.4,36.9,-1.2",
 }
@@ -50,4 +50,4 @@ if __name__ == "__main__":
     path = download_file(PARAMS)
     with xr.open_dataset(path) as dataset:
         print(dataset)
-        print(dataset["max_temperature"])
+        print(dataset["precipitation"])

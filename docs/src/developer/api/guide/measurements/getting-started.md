@@ -24,16 +24,16 @@ The response contains `products` (each with `variable_name` and `name`) and `att
 
 ## 3. Query a point
 
-This example uses retained historical daily CBAM data so its dates do not expire with the forecast horizon:
+This example uses IMERG V07 daily satellite rainfall, an observational product, so its dates do not expire with a forecast horizon:
 
 ```bash
 curl --fail-with-body --get \
   'https://gap.tomorrownow.org/api/v1/measurement/' \
   --header "Authorization: Token $GAP_API_TOKEN" \
-  --data-urlencode 'product=cbam_historical_analysis' \
-  --data-urlencode 'attributes=max_temperature,min_temperature' \
-  --data-urlencode 'start_date=2020-01-01' \
-  --data-urlencode 'end_date=2020-01-03' \
+  --data-urlencode 'product=imerg_v07' \
+  --data-urlencode 'attributes=precipitation' \
+  --data-urlencode 'start_date=2026-09-01' \
+  --data-urlencode 'end_date=2026-09-03' \
   --data-urlencode 'lat=-1.404244' \
   --data-urlencode 'lon=35.008688' \
   --data-urlencode 'output_type=json'

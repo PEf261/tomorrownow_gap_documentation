@@ -69,17 +69,15 @@ nav:
                     - Index: developer/api/guide/measurements/attributes-reference.md
                     - NextGen daily forecasts: developer/api/guide/measurements/attributes-reference/nextgen-daily.md
                     - NextGen hourly forecasts: developer/api/guide/measurements/attributes-reference/nextgen-hourly.md
+                    - KMSA Kenya daily rainfall forecast: developer/api/guide/measurements/attributes-reference/kenya-rainfall.md
                     - Google WeatherNext 2: developer/api/guide/measurements/attributes-reference/weathernext2.md
                     - Daily precipitation forecast: developer/api/guide/measurements/attributes-reference/precipitation-blend.md
-                    - Kenya rainfall forecast: developer/api/guide/measurements/attributes-reference/kenya-rainfall.md
                     - NeuralGCM S2S: developer/api/guide/measurements/attributes-reference/neuralgcm.md
                     - IMERG V07 daily rainfall: developer/api/guide/measurements/attributes-reference/imerg.md
                     - Arable weather stations: developer/api/guide/measurements/attributes-reference/arable-stations.md
                     - TAHMO weather stations: developer/api/guide/measurements/attributes-reference/tahmo-stations.md
                     - Disdrometer observations: developer/api/guide/measurements/attributes-reference/disdrometer.md
                     - Windborne radiosonde observations: developer/api/guide/measurements/attributes-reference/radiosonde.md
-                    - CBAM daily reanalysis — raw: developer/api/guide/measurements/attributes-reference/cbam-reanalysis-raw.md
-                    - CBAM daily reanalysis — bias-corrected: developer/api/guide/measurements/attributes-reference/cbam-reanalysis-bias-corrected.md
                     - TAMSAT rainfall long-term normals: developer/api/guide/measurements/attributes-reference/tamsat-ltn.md
                     - iSDA Soil: developer/api/guide/measurements/attributes-reference/isda-soil.md
                     - SoilGrids v2: developer/api/guide/measurements/attributes-reference/soilgrids.md

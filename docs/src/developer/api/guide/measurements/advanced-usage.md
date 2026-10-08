@@ -21,10 +21,10 @@ Add `async=true` to a normal GET measurement request. A successful submission re
 curl --fail-with-body --get \
   'https://gap.tomorrownow.org/api/v1/measurement/' \
   --header "Authorization: Token $GAP_API_TOKEN" \
-  --data-urlencode 'product=cbam_historical_analysis' \
-  --data-urlencode 'attributes=max_temperature,min_temperature' \
-  --data-urlencode 'start_date=2020-01-01' \
-  --data-urlencode 'end_date=2020-01-03' \
+  --data-urlencode 'product=imerg_v07' \
+  --data-urlencode 'attributes=precipitation' \
+  --data-urlencode 'start_date=2026-09-01' \
+  --data-urlencode 'end_date=2026-09-03' \
   --data-urlencode 'bbox=36.7,-1.4,36.9,-1.2' \
   --data-urlencode 'output_type=netcdf' \
   --data-urlencode 'async=true'

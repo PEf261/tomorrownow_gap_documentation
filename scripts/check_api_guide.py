@@ -22,6 +22,8 @@ RETIRED = {
     'cbam_shortterm_forecast', 'cbam_shortterm_hourly_forecast',
     'nigeria_daily_forecast', 'nigeria_hourly_forecast',
 }
+# Still served for existing integrations, deliberately not listed in the public guide.
+NOT_LISTED = {'cbam_historical_analysis', 'cbam_historical_analysis_bias_adjust'}
 
 
 def fixture(name):
@@ -40,7 +42,7 @@ mappings = fixture('8.dataset_attribute.json')
 expected = {}
 for pk, dataset in datasets.items():
     product = types[dataset['type']]['variable_name']
-    if (product in RETIRED or not dataset.get('is_active', True)
+    if (product in RETIRED or product in NOT_LISTED or not dataset.get('is_active', True)
             or dataset.get('is_internal_use', False)):
         continue
     names = expected.setdefault(product, set())

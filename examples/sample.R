@@ -5,9 +5,9 @@ library(ncdf4)
 token <- Sys.getenv("GAP_API_TOKEN")
 if (!nzchar(token)) stop("Set GAP_API_TOKEN to your GAP API key")
 params <- list(
-  product = "cbam_historical_analysis",
-  attributes = "max_temperature,min_temperature",
-  start_date = "2020-01-01", end_date = "2020-01-03",
+  product = "imerg_v07",
+  attributes = "precipitation",
+  start_date = "2026-09-01", end_date = "2026-09-03",
   output_type = "netcdf", bbox = "36.7,-1.4,36.9,-1.2"
 )
 output <- "data.nc"
@@ -27,8 +27,8 @@ tryCatch({
   tryCatch({
     print(nc)
     print(names(nc$var))
-    temperature <- ncvar_get(nc, "max_temperature")
-    print(range(temperature, na.rm = TRUE))
+    rainfall <- ncvar_get(nc, "precipitation")
+    print(range(rainfall, na.rm = TRUE))
   }, finally = nc_close(nc))
   if (!file.copy(temporary, output, overwrite = TRUE)) stop("Could not save output")
   cat("Saved", output, "\n")

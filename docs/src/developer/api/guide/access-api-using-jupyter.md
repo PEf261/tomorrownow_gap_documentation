@@ -1,6 +1,6 @@
 # Python and Jupyter Notebook
 
-Download a NetCDF subset of retained historical daily CBAM data, then inspect it with xarray. This example uses a small bounding box and fixed historical dates. For a forecast, change the product, fields and dates together using the [catalogue](measurements/data-products.md).
+Download a NetCDF subset of IMERG V07 daily satellite rainfall, then inspect it with xarray. This example uses a small bounding box and fixed historical dates. For a forecast, change the product, fields and dates together using the [catalogue](measurements/data-products.md).
 
 ## Install and authenticate
 
@@ -17,7 +17,7 @@ Download [sample.py](https://github.com/kartoza/tomorrownow_gap_documentation/bl
 
 The script:
 
-1. Requests `max_temperature,min_temperature` from `cbam_historical_analysis` for 1–3 January 2020.
+1. Requests `precipitation` from `imerg_v07` for 1–3 September 2026.
 2. Downloads into a temporary file and checks the HTTP status before replacing `data.nc`.
 3. Opens the completed file with xarray and prints coordinates, units and variables.
 
@@ -27,10 +27,10 @@ Errors raise an exception. If a request fails, an older `data.nc` is not reopene
 
 ```python
 params = {
-    "product": "cbam_historical_analysis",
-    "attributes": "max_temperature,min_temperature",
-    "start_date": "2020-01-01",
-    "end_date": "2020-01-03",
+    "product": "imerg_v07",
+    "attributes": "precipitation",
+    "start_date": "2026-09-01",
+    "end_date": "2026-09-03",
     "output_type": "netcdf",
     "bbox": "36.7,-1.4,36.9,-1.2",
 }
@@ -47,7 +47,7 @@ import xarray as xr
 
 with xr.open_dataset("data.nc") as dataset:
     print(dataset)
-    print(dataset["max_temperature"].attrs)
+    print(dataset["precipitation"].attrs)
     print(dataset.coords)
 ```
 

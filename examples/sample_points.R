@@ -9,9 +9,9 @@ stopifnot(all(is.finite(points$lon)), all(is.finite(points$lat)))
 stopifnot(all(abs(points$lon) <= 180), all(abs(points$lat) <= 90))
 for (i in seq_len(nrow(points))) {
   params <- list(
-    product = "cbam_historical_analysis",
-    attributes = "max_temperature,min_temperature",
-    start_date = "2020-01-01", end_date = "2020-01-03",
+    product = "imerg_v07",
+    attributes = "precipitation",
+    start_date = "2026-09-01", end_date = "2026-09-03",
     output_type = "csv", lon = points$lon[i], lat = points$lat[i]
   )
   temporary <- tempfile(fileext = ".csv")
